@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <script src="index.js" async></script>
+  <style>
+    .bord {
+      border: 1px solid black;
+      background-color: blue;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .tabCss {
+      margin: 0px 0px 0px 0px;
+      padding: 0px 25px 0px 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Jumbotron information -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4 text-center">APP</h1>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <button type="submit" class="btn btn-danger" id="signedOut">Sign-Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- current train information -->
+  <div class="card-container tabCss">
+    <div class="card-header">
+      <h3 class="text-center tabCss">Current Train Schedule</h3>
+    </div>
+    <div class="card-body">
+      <table class="table schedule">
+        <thead class="thead-dark">
+          <tr>
+            <th>Train Name</th>
+            <th>Destination</th>
+            <th>Frequency (min)</th>
+            <th>Next Arrival</th>
+            <th>Minutes Away</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <hr>
+  <!-- add train information -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="text-center bord">Add train</h4>
+        <form>
+          <div class="form-group row">
+            <label for="trainName" class="col-2 col-form-label">Train Name</label>
+            <div class="col-10">
+              <input class="form-control" type="text" placeholder="Enter train name" id="trainName" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="Destination" class="col-2 col-form-label">Destination</label>
+            <div class="col-10">
+              <input class="form-control" type="text" placeholder="Enter train destination" id="Destination" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="trainTime" class="col-2 col-form-label">First Train Time (HH:mm military time)</label>
+            <div class="col-10">
+              <input type="time" class="form-control" id="trainTime" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="freq" class="col-2 col-form-label">Frequency (minutes)</label>
+            <div class="col-10">
+              <input class="form-control" type="text" placeholder="frequency" id="freq" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-dark" id="submitForm">Submit</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

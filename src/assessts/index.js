@@ -54,7 +54,7 @@ $(document).ready(function() {
 			.then(function() {
 				var user = firebase.auth().currentUser;
 				if (user) {
-					window.location = 'app.html';
+					window.location = '../index.html';
 				} else {
 					alert('failed to load page!!!');
 				}
@@ -74,7 +74,7 @@ $(document).ready(function() {
 				// Sign-out successful.
 				alert('successful signed out!!!');
 				if (firebase.auth().currentUser === null) {
-					window.location = 'test.html';
+					window.location = 'src/createLogin.html';
 				} else {
 					alert('failed to load page!!!');
 				}
